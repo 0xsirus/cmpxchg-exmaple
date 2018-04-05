@@ -3,4 +3,4 @@ This is an example to demonstrate how you can use the Intel's "cmpxchg" instruct
 
 Compile:
 
-gcc -o cmpxchg_lock -lpthread cmpxchg_lock.c 
+    gcc -o cmpxchg_lock -lpthread cmpxchg_lock.c 
