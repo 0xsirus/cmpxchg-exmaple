@@ -20,7 +20,7 @@ int ulock(void * uadr){
     asm volatile(
         "xor %%rax,%%rax\n"
         "mov $1,%%rbx\n"
-        "cmpxchg %%ebx,(%1)\n"
+        "lock cmpxchg %%ebx,(%1)\n"
         "sete (%0)\n"
         : : "r"(&r),"r" (uadr)
         : "%rax","%rbx"
