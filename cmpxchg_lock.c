@@ -16,7 +16,7 @@ unsigned long global_lock   = 0;
     param uadr: the address of the memory area to use as a user space lock
 */
 int ulock(void * uadr){
-    unsigned long r =0 ;
+    unsigned long volatile r =0 ;
     asm volatile(
         "xor %%rax,%%rax\n"
         "mov $1,%%rbx\n"
@@ -53,7 +53,7 @@ void *test_thread(void *p){
             sleep(0.01);i--;
         }
     }
-    
+
 }
 
 
